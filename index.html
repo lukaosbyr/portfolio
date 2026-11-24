@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lukas Yunge — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: quiet, maker's notebook — the portfolio speaks
+   IDEA: a printed A4 portfolio laid on a pale green table
+   PICTURE: the pages themselves, large, one after another
+   COLOUR/TYPE: portfolio sage ground, ink black; Courier Prime titles + Plex Mono
+   LAYOUT: name + links, then pages stacked, CV, contact */
+:root{color-scheme:light dark;--bg:light-dark(#eef3e6,#171a14);--ink:light-dark(#1d1d1b,#e9eee0);--mute:light-dark(#5d6158,#a3a99a);--line:light-dark(#1d1d1b,#e9eee0)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Mono",ui-monospace,monospace;overflow-x:clip}
+a{color:inherit}
+header{padding:clamp(28px,5vw,72px) max(5vw,16px) 20px;max-width:1240px;margin:0 auto}
+h1{font:400 clamp(36px,7vw,64px)/1.05 "Courier Prime",monospace;margin:0;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
+.role{margin:18px 0 0;color:var(--mute);max-width:60ch}
+nav{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid color-mix(in srgb,var(--line) 20%,transparent)}
+nav .in{max-width:1240px;margin:0 auto;padding:10px max(5vw,16px);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
+nav a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:5px}
+nav a.pdf{margin-left:auto;text-decoration:none;border:1px solid var(--line);padding:0 14px}
+nav a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+section{max-width:980px;margin:0 auto;padding:clamp(28px,4vw,56px) max(5vw,16px)}
+h2{font:400 clamp(26px,4vw,36px)/1.1 "Courier Prime",monospace;margin:0 0 24px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline}
+h2 a{font:14px "IBM Plex Mono",monospace;color:var(--mute)}
+.pages{display:grid;gap:clamp(20px,3vw,40px)}
+.pages img{display:block;width:100%;height:auto;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.08),0 18px 40px -18px rgba(0,0,0,.35)}
+.contact{display:grid;gap:6px;font-size:17px}
+.contact span{color:var(--mute)}
+footer{padding:40px max(5vw,16px) 60px;text-align:center;color:var(--mute);font-size:13px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:600px){nav a.pdf{margin-left:0}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Lukas Yunge.</h1>
+  <p class="role">Designer / Maker — Puerto Varas, Chile. Performative objects, spaces and experiences through computational and analog tools. Co-founder of for{m4tic}, head of design at Kale.</p>
+</header>
+<nav><div class="in">
+  <a href="#portfolio">Portfolio</a>
+  <a href="#cv">CV</a>
+  <a href="#contact">Contact</a>
+  <a class="pdf" href="LukasYunge_Portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF ↗</a>
+  <a class="pdf" style="margin-left:0" href="LukasYunge_CV.pdf" target="_blank" rel="noopener">CV PDF ↗</a>
+</div></nav>
+
+<section id="portfolio">
+  <h2>Portfolio. <a href="LukasYunge_Portfolio.pdf" target="_blank" rel="noopener">2026 · 13 pages</a></h2>
+  <div class="pages" id="pp"></div>
+</section>
+
+<section id="cv">
+  <h2>CV. <a href="LukasYunge_CV.pdf" target="_blank" rel="noopener">PDF ↗</a></h2>
+  <div class="pages"><img src="cv.jpg" alt="Curriculum vitae of Lukas Yunge Rozas" width="1801" height="2330" loading="lazy"></div>
+</section>
+
+<section id="contact">
+  <h2>Contact.</h2>
+  <div class="contact">
+    <div><span>E-mail </span><a href="mailto:lukas.yunge10@gmail.com">lukas.yunge10@gmail.com</a></div>
+    <div><span>Phone </span><a href="tel:+56968310224">+56 9 6831 0224</a></div>
+    <div><span>Instagram </span><a href="https://instagram.com/lukasbyr_" target="_blank" rel="noopener">@lukasbyr_</a> · <a href="https://instagram.com/form4tic" target="_blank" rel="noopener">@form4tic</a></div>
+  </div>
+</section>
+<footer>Lukas Yunge Rozas · 2026</footer>
+<script>
+{
+  const n=13, pp=document.getElementById('pp');
+  pp.innerHTML=Array.from({length:n},(_,i)=>{
+    const k=String(i+1).padStart(2,'0');
+    return `<img src="${k}.jpg" alt="Portfolio page ${i+1}" width="1800" height="2546" ${i>1?'loading="lazy"':''}>`;
+  }).join('');
+}
+</script>
+</body>
+</html>
