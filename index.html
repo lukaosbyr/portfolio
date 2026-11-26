@@ -52,7 +52,7 @@ footer{padding:40px max(5vw,16px) 60px;text-align:center;color:var(--mute);font-
 </div></nav>
 
 <section id="portfolio">
-  <h2>Portfolio. <a href="LukasYunge_Portfolio.pdf" target="_blank" rel="noopener">2026 · 13 pages</a></h2>
+  <h2>Portfolio. <a href="LukasYunge_Portfolio.pdf" target="_blank" rel="noopener">2026 · 16 pages</a></h2>
   <div class="pages" id="pp"></div>
 </section>
 
@@ -72,7 +72,7 @@ footer{padding:40px max(5vw,16px) 60px;text-align:center;color:var(--mute);font-
 <footer>Lukas Yunge Rozas · 2026</footer>
 <script>
 {
-  const n=13, pp=document.getElementById('pp');
+  const n=16, pp=document.getElementById('pp');
   pp.innerHTML=Array.from({length:n},(_,i)=>{
     const k=String(i+1).padStart(2,'0');
     return `<img src="${k}.jpg" alt="Portfolio page ${i+1}" width="1800" height="2546" ${i>1?'loading="lazy"':''}>`;
